@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1234567,
+    "username": "aluno",
+    "name": "Aluno do Curso",
+    "state": "active",
+    "web_url": "https://gitlab.com/aluno",
+    "access_level": 50
+  },
+  {
+    "id": 2345678,
+    "username": "bia-dev",
+    "name": "Bia Dev",
+    "state": "active",
+    "web_url": "https://gitlab.com/bia-dev",
+    "access_level": 30
+  },
+  {
+    "id": 3456789,
+    "username": "caio-qa",
+    "name": "Caio QA",
+    "state": "active",
+    "web_url": "https://gitlab.com/caio-qa",
+    "access_level": 20
+  },
+  {
+    "id": 4567890,
+    "username": "ex-estagiario",
+    "name": "Ex Estagiário",
+    "state": "active",
+    "web_url": "https://gitlab.com/ex-estagiario",
+    "access_level": 40
+  },
+  {
+    "id": 6789012,
+    "username": "planejadora",
+    "name": "Planejadora",
+    "state": "active",
+    "web_url": "https://gitlab.com/planejadora",
+    "access_level": 15
+  }
+]

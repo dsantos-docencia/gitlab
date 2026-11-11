@@ -1,0 +1,11 @@
+[
+  {
+    "name": "v*",
+    "create_access_levels": [
+      {
+        "access_level": 40,
+        "access_level_description": "Maintainers"
+      }
+    ]
+  }
+]

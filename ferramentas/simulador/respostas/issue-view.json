@@ -1,0 +1,32 @@
+{
+  "iid": 12,
+  "title": "Erro 500 ao salvar o perfil",
+  "state": "opened",
+  "labels": [
+    "bug",
+    "prioridade::alta"
+  ],
+  "assignees": [
+    {
+      "id": 2345678,
+      "username": "bia-dev",
+      "name": "Bia Dev",
+      "state": "active",
+      "web_url": "https://gitlab.com/bia-dev"
+    }
+  ],
+  "author": {
+    "id": 3456789,
+    "username": "caio-qa",
+    "name": "Caio QA",
+    "state": "active",
+    "web_url": "https://gitlab.com/caio-qa"
+  },
+  "created_at": "2026-11-01T12:00:00Z",
+  "updated_at": "2026-11-08T12:00:00Z",
+  "web_url": "https://gitlab.com/aluno/laboratorio/-/issues/12",
+  "milestone": {
+    "title": "v1.1"
+  },
+  "description": "Passos: ..."
+}

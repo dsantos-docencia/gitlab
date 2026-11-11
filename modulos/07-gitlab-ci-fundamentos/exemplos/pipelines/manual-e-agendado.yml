@@ -1,0 +1,14 @@
+# Curso de GitLab · Módulo 07 · pipeline de referência (© 2026 Prof. Daniel Santos · PolyForm-NC)
+# Crie o agendamento em Build → Pipeline schedules (o cron do GitLab usa o fuso que você escolher).
+variables:
+  DIAS:
+    value: "7"
+    description: Quantos dias olhar para trás no relatório
+
+relatorio:
+  image: alpine:3.22
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "web"
+  script:
+    - 'echo "Relatório dos últimos $DIAS dias de $CI_PROJECT_PATH"'

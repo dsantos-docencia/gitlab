@@ -1,0 +1,37 @@
+# Curso de GitLab · Módulo 10 · scanners no pipeline (© 2026 Prof. Daniel Santos · PolyForm-NC)
+stages: [build, test, portao]
+
+include:
+  - template: Jobs/SAST.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
+  - template: Jobs/Dependency-Scanning.v2.gitlab-ci.yml
+  - template: Jobs/SAST-IaC.gitlab-ci.yml
+
+compilar:
+  stage: build
+  image: alpine:3.22
+  script:
+    - echo compilando
+
+# Portão de segurança que funciona até no plano Free: lê os relatórios JSON
+# dos scanners e reprova o pipeline se houver Critical ou High.
+portao-de-seguranca:
+  stage: portao
+  image: alpine:3.22
+  needs:
+    - job: semgrep-sast
+      artifacts: true
+      optional: true
+    - job: secret_detection
+      artifacts: true
+      optional: true
+  script:
+    - apk add --no-cache jq
+    - |
+      total=0
+      for r in gl-*-report.json; do
+        [ -f "$r" ] || continue
+        n=$(jq '[.vulnerabilities[] | select(.severity == "Critical" or .severity == "High")] | length' "$r")
+        echo "$r: $n Critical/High"; total=$((total + n))
+      done
+      [ "$total" -eq 0 ]

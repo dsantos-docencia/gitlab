@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="960" height="380" role="img" aria-label="GitLab flow: do issue ao ambiente, com o pipeline em todo passo">
+<title>GitLab flow: do issue ao ambiente, com o pipeline em todo passo</title>
+<defs><marker id="s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+<rect width="960" height="380" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="30" y="36" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">GitLab flow: do issue ao ambiente, com o pipeline em todo passo</text>
+<rect x="25" y="90" width="140" height="135" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="95.0" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">① issue</text>
+<text x="95.0" y="136" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">o porquê</text>
+<text x="95.0" y="154" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11.5" font-weight="400" fill="#64748b">#12</text>
+<rect x="180" y="90" width="140" height="135" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="250.0" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">② branch</text>
+<text x="250.0" y="136" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">criada do issue</text>
+<text x="250.0" y="154" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11.5" font-weight="400" fill="#64748b">12-login</text>
+<rect x="335" y="90" width="140" height="135" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="405.0" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">③ commits</text>
+<text x="405.0" y="136" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">push dispara CI</text>
+<text x="405.0" y="154" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11.5" font-weight="400" fill="#64748b">git push</text>
+<rect x="490" y="90" width="140" height="135" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="560.0" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">④ merge request</text>
+<text x="560.0" y="136" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">Closes #12</text>
+<text x="560.0" y="154" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11.5" font-weight="400" fill="#64748b">!7</text>
+<rect x="645" y="90" width="140" height="135" rx="12" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="715.0" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">⑤ pipeline + revisão</text>
+<text x="715.0" y="136" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">jobs verdes,</text>
+<text x="715.0" y="154" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">threads resolvidas</text>
+<text x="715.0" y="172" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11.5" font-weight="400" fill="#64748b">✔ testes</text>
+<rect x="800" y="90" width="140" height="135" rx="12" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="870.0" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">⑥ merge → deploy</text>
+<text x="870.0" y="136" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">ambiente</text>
+<text x="870.0" y="154" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">staging → prod</text>
+<text x="870.0" y="172" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11.5" font-weight="400" fill="#64748b">environment:</text>
+<path d="M165 157 L178 157" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<path d="M320 157 L333 157" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<path d="M475 157 L488 157" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<path d="M630 157 L643 157" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<path d="M785 157 L798 157" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<path d="M715 227 C 715 300, 405 300, 405 229" stroke="#475569" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#s)"/>
+<text x="560" y="300" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" font-weight="600" fill="#0f172a">novos commits atualizam o MR</text>
+<text x="480" y="340" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0f172a">Referências do GitLab: #12 é issue, !7 é merge request, ~bug é label, %v1.1 é milestone, &amp;3 é épico.</text>
+<text x="936" y="370" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#94a3b8">© 2026 Prof. Daniel Santos · CC BY-NC-SA 4.0</text>
+</svg>

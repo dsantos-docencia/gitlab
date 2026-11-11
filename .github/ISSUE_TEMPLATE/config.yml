@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Dúvidas e conversa
+    url: https://github.com/dsantos-docencia/gitlab/discussions
+    about: Para perguntas gerais e troca de ideias (se as Discussions estiverem ativas).

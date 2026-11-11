@@ -1,0 +1,50 @@
+name: "📜 Enviar um script para a comunidade"
+description: Tem um script legal? Compartilhe! A gente avalia e, se fizer sentido, inclui no catálogo da comunidade com seu crédito.
+title: "[script] "
+labels: ["script-da-comunidade"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Não deixe o conhecimento morrer com você.** 🌱
+        Compartilhe aquele script útil que você escreveu. Vamos avaliar juntos, comentar, e — se fizer sentido — incluí-lo em [`scripts/comunidade/`](https://github.com/dsantos-docencia/gitlab/tree/main/scripts/comunidade) **com o seu crédito**.
+  - type: input
+    id: nome
+    attributes:
+      label: Nome do script e o que ele faz (em uma linha)
+      placeholder: "backup-fotos.sh — organiza fotos por data de EXIF"
+    validations:
+      required: true
+  - type: textarea
+    id: problema
+    attributes:
+      label: Que problema ele resolve?
+      description: Conte a história — em que situação real ele te ajudou.
+    validations:
+      required: true
+  - type: textarea
+    id: codigo
+    attributes:
+      label: O script (ou link)
+      description: Cole o código aqui (entre ```bash … ```), ou o link para um gist/repositório.
+      render: bash
+    validations:
+      required: true
+  - type: input
+    id: credito
+    attributes:
+      label: Como você quer ser creditado?
+      placeholder: "Seu Nome (@seu-usuario)"
+    validations:
+      required: true
+  - type: checkboxes
+    id: aceite
+    attributes:
+      label: Antes de enviar
+      options:
+        - label: "O script é meu (ou tenho direito de compartilhá-lo) e aceito publicá-lo sob as licenças do projeto (PolyForm Noncommercial, uso não comercial)."
+          required: true
+        - label: "Removi segredos, senhas, IPs e dados sensíveis do código."
+          required: true
+        - label: "Entendo que o mantenedor pode sugerir ajustes ou recusar, e que a inclusão é uma curadoria."
+          required: true

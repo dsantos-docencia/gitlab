@@ -1,0 +1,56 @@
+# Mapa de respostas do glab simulado (padrão glob<TAB>resposta<TAB>código)
+# A ORDEM IMPORTA: o primeiro padrão que casar vence — específicos primeiro.
+--version	texto:glab 1.130.0 (simulado)
+version*	texto:glab 1.130.0 (simulado)
+auth status*	texto:gitlab.com\n  ✓ Logged in to gitlab.com as aluno (simulado)
+api user*	user.json
+api -X POST groups*	texto:{"id":901,"name":"Escola Dev","path":"escola-dev","full_path":"escola-dev","visibility":"private"}
+api -X POST projects -*	texto:{"id":990,"path_with_namespace":"aluno/lab-gitlab","web_url":"https://gitlab.com/aluno/lab-gitlab","http_url_to_repo":"https://gitlab.com/aluno/lab-gitlab.git","visibility":"private","default_branch":"main"}
+api -X POST projects/*/protected_branches*	texto:{"id":2,"name":"main"}
+api -X POST projects/*/protected_tags*	texto:{"name":"v*"}
+api -X POST projects/*/trigger/pipeline*	texto:{"id":9100,"status":"created","ref":"main","web_url":"https://gitlab.com/aluno/laboratorio/-/pipelines/9100"}
+api -X POST projects/*/repository/changelog*	texto:{}
+api -X POST projects/*/hooks*	texto:{"id":31,"url":"https://exemplo.dev/webhook","merge_requests_events":true,"pipeline_events":true,"push_events":false}
+api -X POST projects/*/remote_mirrors*	texto:{"id":5,"enabled":true,"only_protected_branches":true,"update_status":"none","url":"https://*****:*****@gitlab.exemplo.dev/espelho/loja.git"}
+api -X POST projects/*/labels*	texto:{"id":51,"name":"novo"}
+api -X POST projects/*/pipeline*	texto:{"id":9100,"iid":58,"status":"created","ref":"main","web_url":"https://gitlab.com/aluno/laboratorio/-/pipelines/9100"}
+api -X DELETE *	-
+api -X PUT projects/*	texto:{"id":777,"path_with_namespace":"aluno/laboratorio"}
+api *projects/*/hooks*	hooks.json
+api *projects/*/variables*	variables-api.json
+api *projects/*/job_token_scope/allowlist*	job-token-allowlist.json
+api *projects/*/job_token_scope*	job-token-scope.json
+api *projects/*/protected_branches/*	protected-branch-main.json
+api *projects/*/protected_branches*	protected-branches.json
+api *projects/*/protected_tags*	protected-tags.json
+api *projects/*/members/all*	members.json
+api *projects/*/members*	members.json
+api *projects/*/merge_requests*	mrs-api.json
+api *projects/*/issues*	issues-api.json
+api *projects/*/pipelines/*	pipeline-9100.json
+api *projects/*/pipelines*	pipelines-api.json
+api *projects/*/releases*	releases-api.json
+api *projects/*/repository/compare*	compare.json
+api *projects/*/labels*	labels-api.json
+api *projects/*/repository/changelog*	changelog.json
+api *projects/*/repository/tags*	tags.json
+api *templates/licenses/*	license-mit.json
+api *groups/*/projects*	group-projects.json
+api *projects/*	project.json
+api graphql*	graphql.json
+repo view*	project.json
+repo create*	texto:✓ Created repository aluno/projeto on GitLab: https://gitlab.com/aluno/projeto (simulado)
+issue list*	issue-list.json
+issue view*	issue-view.json
+issue create*	texto:https://gitlab.com/aluno/laboratorio/-/issues/42
+mr list*	mr-list.json
+mr view*	mr-view.json
+mr create*	texto:https://gitlab.com/aluno/laboratorio/-/merge_requests/7
+label list*	label-list.json
+label create*	texto:✓ Label criada (simulado)
+ci lint*	texto:✓ CI/CD YAML is valid! (simulado)
+ci run*	texto:Created pipeline (id: 9100), status: created, ref: main, weburl: https://gitlab.com/aluno/laboratorio/-/pipelines/9100
+ci status*	texto:(success) • 01m 12s\ttestes\t\ttestes
+release create*	texto:✓ Release criada (simulado)
+variable list*	texto:KEY\tPROTECTED\tMASKED\nDEPLOY_TOKEN\ttrue\ttrue
+schedule list*	texto:ID\tDescription\tCron\n12\tRelatório semanal\t0 11 * * 1

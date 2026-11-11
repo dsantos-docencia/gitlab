@@ -1,0 +1,12 @@
+[
+  {
+    "name": "v1.1.0",
+    "target": "a1b2c3d",
+    "protected": true
+  },
+  {
+    "name": "v1.0.0",
+    "target": "e5f6a7b",
+    "protected": true
+  }
+]

@@ -1,0 +1,46 @@
+# Curso de GitLab · Laboratório local: GitLab CE + GitLab Runner
+# Prof. Daniel Santos · github.com/dsantos-docencia/gitlab · © 2026 (PolyForm-NC)
+#
+# Requer ~4 GB de RAM livres (8 GB recomendados) e Docker Compose v2.
+# Use pelo atalho:  ./laboratorio/gitlab-local.sh subir
+# Só para estudo: a porta fica em localhost, sem HTTPS, e o runner monta o
+# docker.sock (nunca faça isso num servidor compartilhado — Módulo 08).
+name: gitlab-lab
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:19.5.4-ce.0     # versão FIXA: atualizar é decisão sua (Módulo 11)
+    hostname: gitlab
+    restart: unless-stopped
+    shm_size: 256m
+    ports:
+      - "127.0.0.1:8080:80"                 # web e API:  http://localhost:8080
+      - "127.0.0.1:2222:22"                 # Git por SSH: ssh://git@localhost:2222/...
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:8080'
+        nginx['listen_port'] = 80
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+        # Perfil "memória curta" para notebook (docs: running GitLab in a memory-constrained environment)
+        puma['worker_processes'] = 0
+        sidekiq['concurrency'] = 10
+        prometheus_monitoring['enable'] = false
+        gitlab_rails['usage_ping_enabled'] = false
+    volumes:
+      - gitlab-config:/etc/gitlab
+      - gitlab-logs:/var/log/gitlab
+      - gitlab-data:/var/opt/gitlab
+
+  runner:
+    image: gitlab/gitlab-runner:v19.5.3
+    restart: unless-stopped
+    depends_on: [gitlab]
+    volumes:
+      - runner-config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  gitlab-config:
+  gitlab-logs:
+  gitlab-data:
+  runner-config:

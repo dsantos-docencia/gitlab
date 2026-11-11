@@ -1,0 +1,124 @@
+[
+  {
+    "iid": 12,
+    "title": "Erro 500 ao salvar o perfil",
+    "state": "opened",
+    "labels": [
+      "bug",
+      "prioridade::alta"
+    ],
+    "assignees": [
+      {
+        "id": 2345678,
+        "username": "bia-dev",
+        "name": "Bia Dev",
+        "state": "active",
+        "web_url": "https://gitlab.com/bia-dev"
+      }
+    ],
+    "author": {
+      "id": 3456789,
+      "username": "caio-qa",
+      "name": "Caio QA",
+      "state": "active",
+      "web_url": "https://gitlab.com/caio-qa"
+    },
+    "created_at": "2026-11-01T12:00:00Z",
+    "updated_at": "2026-11-08T12:00:00Z",
+    "web_url": "https://gitlab.com/aluno/laboratorio/-/issues/12",
+    "milestone": {
+      "title": "v1.1"
+    }
+  },
+  {
+    "iid": 11,
+    "title": "Adicionar modo escuro",
+    "state": "opened",
+    "labels": [
+      "melhoria"
+    ],
+    "assignees": [],
+    "author": {
+      "id": 1234567,
+      "username": "aluno",
+      "name": "Aluno do Curso",
+      "state": "active",
+      "web_url": "https://gitlab.com/aluno"
+    },
+    "created_at": "2026-10-28T12:00:00Z",
+    "updated_at": "2026-10-29T12:00:00Z",
+    "web_url": "https://gitlab.com/aluno/laboratorio/-/issues/11",
+    "milestone": null
+  },
+  {
+    "iid": 10,
+    "title": "Botão de login desalinhado no celular",
+    "state": "opened",
+    "labels": [
+      "bug"
+    ],
+    "assignees": [],
+    "author": {
+      "id": 5678901,
+      "username": "visitante",
+      "name": "Visitante",
+      "state": "active",
+      "web_url": "https://gitlab.com/visitante"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "updated_at": "2026-10-15T12:00:00Z",
+    "web_url": "https://gitlab.com/aluno/laboratorio/-/issues/10",
+    "milestone": {
+      "title": "v1.1"
+    }
+  },
+  {
+    "iid": 9,
+    "title": "Documentar a API de pedidos",
+    "state": "opened",
+    "labels": [
+      "documentação",
+      "primeira contribuição"
+    ],
+    "assignees": [],
+    "author": {
+      "id": 1234567,
+      "username": "aluno",
+      "name": "Aluno do Curso",
+      "state": "active",
+      "web_url": "https://gitlab.com/aluno"
+    },
+    "created_at": "2026-09-30T12:00:00Z",
+    "updated_at": "2026-09-30T12:00:00Z",
+    "web_url": "https://gitlab.com/aluno/laboratorio/-/issues/9",
+    "milestone": null
+  },
+  {
+    "iid": 8,
+    "title": "Atualizar dependências",
+    "state": "closed",
+    "labels": [
+      "manutenção"
+    ],
+    "assignees": [
+      {
+        "id": 1234567,
+        "username": "aluno",
+        "name": "Aluno do Curso",
+        "state": "active",
+        "web_url": "https://gitlab.com/aluno"
+      }
+    ],
+    "author": {
+      "id": 1234567,
+      "username": "aluno",
+      "name": "Aluno do Curso",
+      "state": "active",
+      "web_url": "https://gitlab.com/aluno"
+    },
+    "created_at": "2026-09-01T12:00:00Z",
+    "updated_at": "2026-09-05T12:00:00Z",
+    "web_url": "https://gitlab.com/aluno/laboratorio/-/issues/8",
+    "milestone": null
+  }
+]

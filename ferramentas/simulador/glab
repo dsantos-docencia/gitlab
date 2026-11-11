@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+# ============================================================================
+#  Curso de GitLab — DevOps de Ponta a Ponta
+#  ferramentas/simulador/glab — um "glab" de mentira para estudar e testar offline
+#
+#  Autor: Prof. Daniel Santos · https://github.com/dsantos-docencia/gitlab
+#  © 2026 Daniel Santos — Código sob PolyForm Noncommercial 1.0.0 (veja LICENSE)
+# ============================================================================
+#
+#  POR QUE UM SIMULADOR?
+#  O GitLab é um serviço na internet: criar issue, abrir MR ou ler a API exige
+#  conta, rede e token. Isso é ótimo para praticar (veja laboratorio/), mas
+#  péssimo para CORRIGIR exercícios automaticamente — o resultado mudaria a
+#  cada execução e cada aluno precisaria de um token no corretor.
+#
+#  Este programa se chama "glab" e fica na frente do glab verdadeiro no PATH.
+#  Ele faz duas coisas:
+#    1. REGISTRA cada chamada (uma linha por chamada, argumentos com aspas
+#       de shell) no arquivo $GLAB_SIMULADO_LOG — o corretor lê esse registro
+#       para saber se você chamou o comando certo, com as opções certas;
+#    2. RESPONDE com um JSON pré-gravado (respostas/), escolhido por padrões
+#       glob em mapa.tsv. (O glab não tem --jq como o gh: filtre com o jq.)
+#
+#  O que ele NÃO faz: falar com a internet. Para isso existe o glab real
+#  (rode os exemplos com GLAB_REAL=1 — veja o README de cada módulo).
+#
+#  FORMATO DO MAPA (TSV: padrão<TAB>resposta<TAB>código-de-saída opcional)
+#    repo view*--output json*   repo-view.json          → arquivo em respostas/
+#    auth status*        texto:Logado (simulado)  → texto literal
+#    mr merge*           -        1               → sem saída, sai com 1
+#  O primeiro padrão que casar com "$*" vence. $GLAB_SIMULADO_MAPA (se existir)
+#  é consultado ANTES do mapa padrão — é assim que um teste injeta respostas.
+# ============================================================================
+set -uo pipefail
+
+# printf %q só preserva acentos legíveis numa localidade UTF-8.
+export LC_ALL=C.UTF-8
+
+aqui="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+# 1. Registro: "glab" + cada argumento com printf %q (preserva espaços e aspas).
+{ printf 'glab'; printf ' %q' "$@"; printf '\n'; } >> "${GLAB_SIMULADO_LOG:-/dev/null}"
+
+# Se o comando lê um corpo da entrada padrão (--input - / --body-file -),
+# guardamos esse corpo também: o corretor pode querer conferir o JSON enviado.
+for ((i = 1; i <= $#; i++)); do
+    if [[ "${!i}" == "--input" || "${!i}" == "--body-file" || "${!i}" == "-F" ]]; then
+        j=$((i + 1))
+        if [[ "${!j:-}" == "-" ]]; then
+            { printf '%s\n' '--- entrada padrão ---'; cat; printf '%s\n' '--- fim ---'; } \
+                >> "${GLAB_SIMULADO_LOG:-/dev/null}"
+        fi
+    fi
+done
+
+linha="$*"
+responder() {   # responder ESPEC BASE_DIR
+    local espec="$1" base="$2"
+    case "$espec" in
+        -|'')     return 0 ;;
+        texto:*)  printf '%b\n' "${espec#texto:}" ;;
+        /*)       cat -- "$espec" ;;
+        *)        cat -- "$base/$espec" ;;
+    esac
+}
+
+for mapa in "${GLAB_SIMULADO_MAPA:-}" "$aqui/mapa.tsv"; do
+    [[ -n "$mapa" && -f "$mapa" ]] || continue
+    while IFS=$'\t' read -r padrao resposta codigo || [[ -n "$padrao" ]]; do
+        [[ -z "$padrao" || "$padrao" == \#* ]] && continue
+        # shellcheck disable=SC2053  # o lado direito É um padrão glob, de propósito
+        if [[ "$linha" == $padrao ]]; then
+            base="$aqui/respostas"
+            [[ "$mapa" != "$aqui/mapa.tsv" ]] && base="$(dirname -- "$mapa")"
+            responder "$resposta" "$base"
+            exit "${codigo:-0}"
+        fi
+    done < "$mapa"
+done
+exit 0

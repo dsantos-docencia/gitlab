@@ -1,0 +1,26 @@
+[
+  {
+    "id": 777,
+    "path_with_namespace": "escola-dev/loja",
+    "archived": false,
+    "visibility": "private",
+    "ssh_url_to_repo": "git@gitlab.com:escola-dev/loja.git",
+    "last_activity_at": "2026-11-09T14:00:00Z"
+  },
+  {
+    "id": 778,
+    "path_with_namespace": "escola-dev/backend/api",
+    "archived": false,
+    "visibility": "internal",
+    "ssh_url_to_repo": "git@gitlab.com:escola-dev/backend/api.git",
+    "last_activity_at": "2026-11-01T10:00:00Z"
+  },
+  {
+    "id": 779,
+    "path_with_namespace": "escola-dev/legado",
+    "archived": true,
+    "visibility": "private",
+    "ssh_url_to_repo": "git@gitlab.com:escola-dev/legado.git",
+    "last_activity_at": "2024-01-01T10:00:00Z"
+  }
+]
