@@ -1,0 +1,44 @@
+# Curso de GitLab · Módulo 08 · pipeline de referência (© 2026 Prof. Daniel Santos · PolyForm-NC)
+stages: [test, build, deploy]
+
+.node:
+  image: node:22-alpine
+  cache:
+    key:
+      files: [package-lock.json]
+    paths: [.npm/]
+  before_script:
+    - npm ci --cache .npm --prefer-offline
+
+testes:
+  extends: .node
+  stage: test
+  image: node:$VERSAO_NODE-alpine
+  parallel:
+    matrix:
+      - VERSAO_NODE: ["20", "22", "24"]
+  script:
+    - npm test
+
+build:
+  extends: .node
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths: [dist/]
+    expire_in: 1 week
+
+deploy-producao:
+  stage: deploy
+  image: alpine:3.22
+  needs: [build]
+  script:
+    - ls dist/
+  environment:
+    name: producao
+    url: https://loja.exemplo.dev
+  resource_group: producao
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual

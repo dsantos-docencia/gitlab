@@ -1,0 +1,43 @@
+name: Verificação do curso
+
+# Garante a promessa do repositório: todo exemplo e toda solução funcionam.
+# Este workflow também é material didático — ele segue as regras que o
+# Módulo 10 ensina: ações fixadas por SHA, permissões mínimas, sem credencial
+# persistida e sem execuções duplicadas.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read            # o GITHUB_TOKEN só lê o código — nada mais
+
+concurrency:
+  group: verificar-${{ github.ref }}
+  cancel-in-progress: true  # um push novo cancela a verificação antiga
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Mostrar versões das ferramentas
+        run: git --version && bash --version | head -1 && jq --version
+
+      - name: Instalar ShellCheck, PyYAML, check-jsonschema, actionlint e zizmor
+        # pipx: o Python do sistema é "externally managed" (PEP 668) no Ubuntu 24.04.
+        run: |
+          sudo apt-get update && sudo apt-get install -y shellcheck python3-yaml
+          pipx install actionlint-py==1.7.12.25
+          pipx install zizmor==1.32.0
+          pipx install check-jsonschema==0.39.0
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Rodar a verificação completa
+        run: ./ferramentas/verificar-tudo.sh

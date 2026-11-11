@@ -1,0 +1,31 @@
+name: "💡 Sugestão / Melhoria"
+description: Uma ideia de exemplo, exercício, módulo ou melhoria no conteúdo.
+title: "[ideia] "
+labels: ["melhoria"]
+body:
+  - type: textarea
+    id: ideia
+    attributes:
+      label: Qual é a ideia?
+      description: Descreva a sugestão e por que ela ajudaria quem está aprendendo.
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo
+      options:
+        - Novo exemplo
+        - Novo exercício
+        - Melhoria num texto existente
+        - Novo tópico/módulo
+        - Projeto prático
+        - Outro
+    validations:
+      required: true
+  - type: checkboxes
+    id: ajuda
+    attributes:
+      label: Quer ajudar a implementar?
+      options:
+        - label: Posso mandar um Pull Request com essa melhoria.

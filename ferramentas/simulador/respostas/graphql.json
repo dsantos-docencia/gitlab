@@ -1,0 +1,15 @@
+{
+  "data": {
+    "currentUser": {
+      "username": "aluno"
+    },
+    "project": {
+      "issues": {
+        "count": 4
+      },
+      "mergeRequests": {
+        "count": 3
+      }
+    }
+  }
+}

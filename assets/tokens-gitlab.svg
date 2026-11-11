@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" width="920" height="420" role="img" aria-label="Tokens do GitLab: cada um tem um dono, um alcance e um prefixo">
+<title>Tokens do GitLab: cada um tem um dono, um alcance e um prefixo</title>
+<defs><marker id="s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+<rect width="920" height="420" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="30" y="36" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Tokens do GitLab: cada um tem um dono, um alcance e um prefixo</text>
+<rect x="30" y="60" width="860" height="36" rx="8" fill="#ffedd5" stroke="#ea580c"/>
+<text x="50" y="84" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">prefixo</text>
+<text x="230" y="84" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">tipo</text>
+<text x="520" y="84" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">age como / para</text>
+<rect x="30" y="104" width="860" height="36" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="50" y="128" text-anchor="start" font-family="Consolas, Menlo, monospace" font-size="12.5" font-weight="600" fill="#c2410c">glpat-</text>
+<text x="230" y="128" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#0f172a">token de acesso pessoal</text>
+<text x="520" y="128" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#334155">você, com os escopos escolhidos</text>
+<rect x="30" y="146" width="860" height="36" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="50" y="170" text-anchor="start" font-family="Consolas, Menlo, monospace" font-size="12.5" font-weight="600" fill="#c2410c">glpat- (bot)</text>
+<text x="230" y="170" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#0f172a">token de projeto/grupo</text>
+<text x="520" y="170" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#334155">um usuário-robô do projeto ou grupo</text>
+<rect x="30" y="188" width="860" height="36" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="50" y="212" text-anchor="start" font-family="Consolas, Menlo, monospace" font-size="12.5" font-weight="600" fill="#c2410c">gldt-</text>
+<text x="230" y="212" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#0f172a">deploy token</text>
+<text x="520" y="212" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#334155">só clonar/baixar pacotes e imagens</text>
+<rect x="30" y="230" width="860" height="36" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="50" y="254" text-anchor="start" font-family="Consolas, Menlo, monospace" font-size="12.5" font-weight="600" fill="#c2410c">glcbt-</text>
+<text x="230" y="254" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#0f172a">CI job token ($CI_JOB_TOKEN)</text>
+<text x="520" y="254" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#334155">o job, enquanto ele roda</text>
+<rect x="30" y="272" width="860" height="36" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="50" y="296" text-anchor="start" font-family="Consolas, Menlo, monospace" font-size="12.5" font-weight="600" fill="#c2410c">glrt-</text>
+<text x="230" y="296" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#0f172a">token de autenticação do runner</text>
+<text x="520" y="296" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#334155">o runner, para pegar jobs</text>
+<rect x="30" y="314" width="860" height="36" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="50" y="338" text-anchor="start" font-family="Consolas, Menlo, monospace" font-size="12.5" font-weight="600" fill="#c2410c">glptt-</text>
+<text x="230" y="338" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#0f172a">token de gatilho de pipeline</text>
+<text x="520" y="338" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#334155">disparar pipelines pela API</text>
+<text x="460" y="385" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">Regra de ouro: prazo de validade sempre, o menor escopo possível — e, no CI, prefira o $CI_JOB_TOKEN a um token pessoal.</text>
+<text x="896" y="406" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#94a3b8">© 2026 Prof. Daniel Santos · CC BY-NC-SA 4.0</text>
+</svg>

@@ -1,0 +1,32 @@
+# Curso de GitLab · Projeto 03 · componente "testes-node"
+# © 2026 Prof. Daniel Santos · PolyForm-NC
+spec:
+  inputs:
+    stage:
+      default: test
+      description: Estágio em que o job roda
+    versao_node:
+      type: string
+      default: "22"
+      description: Versão do Node.js (tag da imagem node:<versão>-alpine)
+    diretorio:
+      type: string
+      default: "."
+      description: Pasta do package.json (monorepos)
+    permitir_falha:
+      type: boolean
+      default: false
+      description: Se true, uma falha não reprova o pipeline
+---
+testes-node-$[[ inputs.versao_node ]]:
+  stage: $[[ inputs.stage ]]
+  image: node:$[[ inputs.versao_node ]]-alpine
+  allow_failure: $[[ inputs.permitir_falha ]]
+  cache:
+    key:
+      files: ["$[[ inputs.diretorio ]]/package-lock.json"]
+    paths: [.npm/]
+  script:
+    - cd "$[[ inputs.diretorio ]]"
+    - npm ci --cache "$CI_PROJECT_DIR/.npm" --prefer-offline
+    - npm test

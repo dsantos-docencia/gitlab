@@ -1,0 +1,22 @@
+[
+  {
+    "name": "bug",
+    "color": "#d73a4a",
+    "description": "Algo não funciona"
+  },
+  {
+    "name": "melhoria",
+    "color": "#a2eeef",
+    "description": "Nova funcionalidade"
+  },
+  {
+    "name": "documentação",
+    "color": "#0075ca",
+    "description": "Documentação"
+  },
+  {
+    "name": "primeira contribuição",
+    "color": "#7057ff",
+    "description": "Bom para quem está começando"
+  }
+]

@@ -1,0 +1,37 @@
+name: "🐛 Erro / Bug"
+description: Algo está errado — um exemplo que não roda, um erro no texto, um link quebrado.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Obrigado por ajudar a melhorar o curso! Quanto mais específico, mais rápido a gente corrige."
+  - type: input
+    id: onde
+    attributes:
+      label: Onde está o problema?
+      description: Caminho do arquivo ou módulo (ex.> modulos/05-texto-e-dados/exemplos/01-grep-sed-awk.sh)
+      placeholder: "modulos/.../arquivo.sh"
+    validations:
+      required: true
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o erro. Se for um script, cole a saída/mensagem de erro.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: O que você esperava?
+    validations:
+      required: false
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente
+      description: Versão do Git (git --version) e sistema (Windows/Linux/macOS/WSL).
+      placeholder: "Git 2.56 · Windows 11 / Ubuntu 24.04"
+    validations:
+      required: false

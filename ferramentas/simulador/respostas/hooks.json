@@ -1,0 +1,4 @@
+[
+  {"id": 30, "url": "https://chat.exemplo.dev/gitlab", "push_events": true, "merge_requests_events": true, "pipeline_events": false, "enable_ssl_verification": true, "alert_status": "executable"},
+  {"id": 29, "url": "http://antigo.exemplo.dev/hook", "push_events": true, "merge_requests_events": false, "pipeline_events": false, "enable_ssl_verification": false, "alert_status": "disabled"}
+]

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 450" width="920" height="450" role="img" aria-label="Grupos, subgrupos e projetos: permissões que descem a árvore">
+<title>Grupos, subgrupos e projetos: permissões que descem a árvore</title>
+<defs><marker id="s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+<rect width="920" height="450" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="30" y="36" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Grupos, subgrupos e projetos: permissões que descem a árvore</text>
+<rect x="330" y="60" width="260" height="80" rx="12" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="460.0" y="86" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">🏛️ grupo escola-dev</text>
+<text x="460.0" y="106" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">@bia-dev = Maintainer</text>
+<rect x="110" y="190" width="260" height="80" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="240.0" y="216" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">📁 subgrupo backend</text>
+<text x="240.0" y="236" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">herda: @bia-dev Maintainer</text>
+<text x="240.0" y="254" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">+ @caio-qa = Reporter</text>
+<rect x="550" y="190" width="260" height="80" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="680.0" y="216" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">📁 subgrupo site</text>
+<text x="680.0" y="236" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">herda: @bia-dev Maintainer</text>
+<rect x="30" y="320" width="200" height="80" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="130.0" y="346" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">📦 backend/api</text>
+<text x="130.0" y="366" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">URL: escola-dev/backend/api</text>
+<rect x="250" y="320" width="200" height="80" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="350.0" y="346" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">📦 backend/fila</text>
+<rect x="580" y="320" width="200" height="80" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="680.0" y="346" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">📦 site/loja</text>
+<path d="M420 142 L260 188" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<path d="M500 142 L660 188" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<path d="M200 272 L140 318" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<path d="M280 272 L340 318" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<path d="M680 272 L680 318" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<text x="460" y="420" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#64748b">Um membro adicionado no grupo vale para todos os subgrupos e projetos abaixo — e só pode ser “aumentado” mais embaixo, nunca reduzido.</text>
+<text x="896" y="440" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#94a3b8">© 2026 Prof. Daniel Santos · CC BY-NC-SA 4.0</text>
+</svg>

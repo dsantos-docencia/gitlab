@@ -1,0 +1,12 @@
+{
+  "commits": [
+    {"short_id": "f1a2b3c", "title": "feat(pedidos): exportação CSV", "author_name": "Bia Dev"},
+    {"short_id": "e2b3c4d", "title": "fix: timeout no checkout", "author_name": "Dani Ops"},
+    {"short_id": "d3c4d5e", "title": "docs: README com exemplos da API", "author_name": "Caio QA"},
+    {"short_id": "c4d5e6f", "title": "feat!: remove a API v1 de pedidos", "author_name": "Bia Dev"},
+    {"short_id": "b5e6f7a", "title": "Merge branch 'fix/timeout' into 'main'", "author_name": "Aluno do Curso"},
+    {"short_id": "a6f7a8b", "title": "ajustes", "author_name": "Ex Estagiário"}
+  ],
+  "diffs": [],
+  "compare_timeout": false
+}

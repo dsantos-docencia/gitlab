@@ -1,0 +1,29 @@
+# Pipeline do PRÓPRIO projeto do componente: testa o componente na versão do
+# commit atual e publica no CI/CD Catalog quando recebe uma tag SemVer.
+# © 2026 Prof. Daniel Santos · Curso de GitLab · PolyForm-NC
+stages: [test, release]
+
+include:
+  # Usa o componente deste mesmo projeto, no commit em teste.
+  - component: $CI_SERVER_FQDN/$CI_PROJECT_PATH/testes-node@$CI_COMMIT_SHA
+    inputs:
+      versao_node: "24"
+      diretorio: exemplo
+
+verificar-componente:
+  stage: test
+  image: python:3.13-alpine
+  script:
+    - pip install --quiet pyyaml
+    - sh verificar-componente.sh templates/*.yml
+
+publicar-no-catalogo:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/cli:latest
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^\d+\.\d+\.\d+$/     # o Catalog exige SemVer
+  script:
+    - echo "publicando $CI_COMMIT_TAG no CI/CD Catalog"
+  release:
+    tag_name: $CI_COMMIT_TAG
+    description: Versão $CI_COMMIT_TAG do componente testes-node

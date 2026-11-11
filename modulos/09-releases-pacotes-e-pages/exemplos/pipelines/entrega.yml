@@ -1,0 +1,63 @@
+# Curso de GitLab · Módulo 09 · pipeline de entrega (© 2026 Prof. Daniel Santos · PolyForm-NC)
+stages: [build, publish, release]
+
+variables:
+  PACOTE_URL: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/loja/${CI_COMMIT_TAG}
+
+compilar:
+  stage: build
+  image: alpine:3.22
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - mkdir -p dist && echo "loja $CI_COMMIT_TAG" > dist/loja.txt && tar -czf dist/loja.tar.gz -C dist loja.txt
+  artifacts:
+    paths: [dist/]
+
+pacote:
+  stage: publish
+  image: curlimages/curl:8.17.0
+  needs: [compilar]
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - 'curl --fail-with-body --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file dist/loja.tar.gz "$PACOTE_URL/loja.tar.gz"'
+
+imagem:
+  stage: publish
+  image: docker:29
+  services: [docker:29-dind]
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+    - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG"
+
+release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/cli:latest
+  needs: [pacote]
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - echo "publicando $CI_COMMIT_TAG"
+  release:
+    tag_name: $CI_COMMIT_TAG
+    name: Versão $CI_COMMIT_TAG
+    description: Veja o CHANGELOG.md
+    assets:
+      links:
+        - name: loja.tar.gz
+          url: $PACOTE_URL/loja.tar.gz
+          link_type: package
+
+site:
+  stage: release
+  image: alpine:3.22
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  script:
+    - mkdir -p public && echo '<h1>Loja</h1>' > public/index.html
+  pages:
+    publish: public

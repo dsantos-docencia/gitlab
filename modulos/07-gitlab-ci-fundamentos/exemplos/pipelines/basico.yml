@@ -1,0 +1,32 @@
+# Curso de GitLab · Módulo 07 · pipeline de referência (© 2026 Prof. Daniel Santos · PolyForm-NC)
+# Copie como .gitlab-ci.yml na raiz do seu projeto.
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    - if: $CI_COMMIT_BRANCH
+    - if: $CI_COMMIT_TAG
+
+stages: [build, test]
+
+default:
+  image: alpine:3.22
+  interruptible: true
+  timeout: 10m
+
+compilar:
+  stage: build
+  script:
+    - mkdir -p dist
+    - echo "build de $CI_COMMIT_SHORT_SHA" > dist/app.txt
+  artifacts:
+    paths: [dist/]
+    expire_in: 1 week
+
+testes:
+  stage: test
+  needs: [compilar]
+  script:
+    - test -f dist/app.txt
+    - ./testes.sh

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" width="920" height="440" role="img" aria-label="GitLab: uma plataforma DevOps inteira em volta do Git">
+<title>GitLab: uma plataforma DevOps inteira em volta do Git</title>
+<defs><marker id="s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+<rect width="920" height="440" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="30" y="36" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">GitLab: uma plataforma DevOps inteira em volta do Git</text>
+<rect x="30" y="80" width="230" height="280" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="145.0" y="106" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">💻 Git</text>
+<text x="145.0" y="126" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">a ferramenta</text>
+<text x="145.0" y="144" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">commits, branches, merge</text>
+<text x="145.0" y="162" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">funciona offline</text>
+<text x="145.0" y="180" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11.5" font-weight="400" fill="#64748b">git push · git fetch</text>
+<rect x="330" y="70" width="560" height="300" rx="12" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="610.0" y="96" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">🦊 GitLab</text>
+<text x="610.0" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">planejar · código · CI/CD · segurança · pacotes · deploy</text>
+<text x="610.0" y="134" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155">num único produto, com um único modelo de permissões</text>
+<rect x="350" y="150" width="160" height="80" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+<text x="430" y="182" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Planejar</text>
+<text x="430" y="204" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#334155">issues, boards</text>
+<rect x="530" y="150" width="160" height="80" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+<text x="610" y="182" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Código</text>
+<text x="610" y="204" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#334155">MRs, revisão</text>
+<rect x="710" y="150" width="160" height="80" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+<text x="790" y="182" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">CI/CD</text>
+<text x="790" y="204" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#334155">pipelines, runners</text>
+<rect x="350" y="250" width="160" height="80" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+<text x="430" y="282" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Proteger</text>
+<text x="430" y="304" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#334155">SAST, segredos</text>
+<rect x="530" y="250" width="160" height="80" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+<text x="610" y="282" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Entregar</text>
+<text x="610" y="304" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#334155">releases, registry</text>
+<rect x="710" y="250" width="160" height="80" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+<text x="790" y="282" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Operar</text>
+<text x="790" y="304" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#334155">ambientes, Pages</text>
+<path d="M260 200 L328 200" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#s)"/>
+<text x="294" y="190" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" font-weight="600" fill="#0f172a">push</text>
+<text x="460" y="400" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#64748b">Mesma ideia do GitHub, outro desenho: no GitLab o CI/CD e a segurança vêm “de fábrica”, e você pode hospedar tudo em casa.</text>
+<text x="896" y="430" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#94a3b8">© 2026 Prof. Daniel Santos · CC BY-NC-SA 4.0</text>
+</svg>
